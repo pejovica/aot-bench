@@ -11,6 +11,7 @@ _benchmarks = {
     'fannkuchredux': [('15000', '10', '9'), ['-H:+MultiThreaded']],
     'mandelbrot': [('15000', '10', '500'), ['-H:+MultiThreaded']],
     'binarytrees': [('15000', '10', '14'), ['-H:+MultiThreaded']],
+    'nbody': [('10000', '10', '100000'), []],
 }
 
 
