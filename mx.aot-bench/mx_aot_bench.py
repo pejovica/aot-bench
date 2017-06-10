@@ -13,6 +13,7 @@ _benchmarks = {
     'binarytrees': [('15000', '10', '14'), ['-H:+MultiThreaded']],
     'nbody': [('10000', '10', '100000'), []],
     # 'javac': [('5000', '10'), []],
+    'spectralnorm': [('5000', '10', '500'), ['-H:+MultiThreaded']],
 }
 
 
