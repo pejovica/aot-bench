@@ -5,9 +5,9 @@ import java.io.PrintStream;
 import java.util.Arrays;
 import java.util.function.Consumer;
 
-class BenchRunner {
+public class BenchRunner {
 
-    static void run(Consumer<String[]> bench, String benchName, String[] args) {
+    public static void run(Consumer<String[]> bench, String benchName, String[] args) {
         Integer nRuns = Integer.valueOf(args[1]);
         String[] benchArgs = Arrays.copyOfRange(args, 2, args.length);
 
