@@ -6,6 +6,16 @@ suite = {
     ]
   },
 
+  "jdklibraries" : {
+    "JDK_TOOLS" : {
+      "path" : "lib/tools.jar",
+      "sourcePath" : "lib/tools.src.zip",
+      "optional" : False,
+      "jdkStandardizedSince" : "9",
+      "module" : "com.sun.tools",
+    },
+  },
+
   "libraries" : {
     "SCALARIFORM" : {
       "maven" : {
@@ -43,16 +53,6 @@ suite = {
         "version" : "1.0.4",
       },
       "sha1" : "7369d653bcfa95d321994660477a4d7e81d7f490",
-    },
-  },
-
-  "jdklibraries" : {
-    "JDK_TOOLS" : {
-      "path" : "lib/tools.jar",
-      "sourcePath" : "lib/tools.src.zip",
-      "optional" : False,
-      "jdkStandardizedSince" : "9",
-      "module" : "com.sun.tools",
     },
   },
 
