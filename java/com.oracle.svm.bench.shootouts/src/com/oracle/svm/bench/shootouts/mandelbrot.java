@@ -2,7 +2,7 @@ package com.oracle.svm.bench.shootouts;
 /*
  * The Computer Language Benchmarks Game
  * http://benchmarksgame.alioth.debian.org/
- * 
+ *
  * contributed by Stefan Krause
  * slightly modified by Chad Whipkey
  * parallelized by Colin D Bennett 2008-10-04
@@ -95,6 +95,7 @@ public final class mandelbrot {
         Thread[] pool = new Thread[2 * Runtime.getRuntime().availableProcessors()];
         for (int i = 0; i < pool.length; i++)
             pool[i] = new Thread() {
+                @Override
                 public void run() {
                     int y;
                     while ((y = yCt.getAndIncrement()) < out.length)

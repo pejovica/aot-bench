@@ -101,7 +101,7 @@ public class javac {
                     "}\n";
 
     private static final JavaSourceFromString TEST_STREAM = new JavaSourceFromString("TestStream", SOURCE);
-    private static final JavaCompiler COMPILER = ToolProvider.getSystemJavaCompiler();
+    private static final JavaCompiler COMPILER = com.sun.tools.javac.api.JavacTool.create();
     private static final StandardJavaFileManager FILE_MANAGER = COMPILER.getStandardFileManager(null, null, null);
 
 
@@ -121,7 +121,7 @@ public class javac {
 
         /**
          * Constructs a new JavaSourceFromString.
-         * 
+         *
          * @param name the name of the compilation unit represented by this file object
          * @param code the source code for the compilation unit represented by this file object
          */

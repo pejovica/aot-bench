@@ -26,7 +26,7 @@ class BenchRunner {
         }
         systemOut.println("---- END WARM UP ----");
 
-// System.gc();
+        // System.gc();
 
         systemOut.println("---- BEGIN MEASURING PERFORMANCE ----");
         systemOut.println("Performing " + args[1] + " runs.");
