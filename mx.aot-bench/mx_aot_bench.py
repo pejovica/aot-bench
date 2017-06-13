@@ -6,6 +6,7 @@ jdk = mx.get_jdk()
 jdk.aot_image = mx.exe_suffix(mx.join(jdk.home, 'bin', 'aot-image'))
 
 _project_name = 'com.oracle.svm.bench.shootouts'
+_project_name = 'com.oracle.svm.bench.scalariform'
 
 _benchmarks = {
     'fannkuchredux': [('15000', '10', '9'), ['-H:+MultiThreaded']],
@@ -16,6 +17,7 @@ _benchmarks = {
     # 'javac': [('1000', '10'), ['-H:IncludeResourceBundles=com.sun.tools.javac.resources.compiler,com.sun.tools.javac.resources.javac,com.sun.tools.javac.resources.version', '-H:+Debug']],
     'spectralnorm': [('5000', '10', '500'), ['-H:+MultiThreaded']],
     'pidigits': [('7500', '50', '500'), []],
+    'scalariform': [('10000', '10'), []],
 }
 
 
@@ -36,8 +38,10 @@ def _build_aot_images(project, benchmarks):
         class_files[bench] = bench_class
         witness = mx.TimeStampFile(mx.join(output_dir, bench))
         if not witness.exists() or witness.isOlderThan(bench_src):
-            cmd = [jdk.aot_image, '-cp', mx.classpath(['com.oracle.svm.bench.shootouts'], jdk=jdk), '-H:+ReportUnsupportedElementsAtRuntime', '-H:Name={}'.format(bench), '-H:Class={}'.format(bench_class)]
+            cmd = [jdk.aot_image, '-cp', mx.classpath(names=project), '-H:Name={}'.format(bench),
+                   '-H:Class={}'.format(bench_class)]
             cmd.extend(benchmarks[bench][1])
+            print(' '.join(cmd))
             mx.run(cmd, cwd=output_dir)
     print('---------------- END BUILDING AOT IMAGES ----------------')
     return class_files
@@ -56,7 +60,7 @@ def aot_benchmark(args):
         common_args = ['-XX:+PrintGC']
         print('------------ BEGIN {} BENCHMARK ------------'.format(bench.upper()))
         print('-------- BEGIN GRAAL RUN --------')
-        graal_cmd = [jdk.java] + common_args + ['-cp',  mx.classpath(['com.oracle.svm.bench.shootouts'], jdk=jdk)]
+        graal_cmd = [jdk.java, '-cp', mx.classpath(names=project)] + common_args
         graal_cmd.append(class_files[bench])
         graal_cmd.extend(benchmarks[bench][0])
         print(' '.join(graal_cmd))
