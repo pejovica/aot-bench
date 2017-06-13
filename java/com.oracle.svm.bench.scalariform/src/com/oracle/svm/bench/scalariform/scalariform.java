@@ -3,15 +3,24 @@ package com.oracle.svm.bench.scalariform;
 import com.oracle.svm.bench.shootouts.AOTBench;
 import com.oracle.svm.bench.shootouts.BenchRunner;
 
-import scala.collection.immutable.HashMap;
 import scalariform.ScalaVersions;
 import scalariform.formatter.ScalaFormatter$;
-import scalariform.formatter.preferences.FormattingPreferences;
+import scalariform.formatter.preferences.FormattingPreferences$;
 
 @AOTBench("scalariform")
 public class scalariform {
 
-    static String scalaSource = "/*                     __                                               *\\\n" +
+    public static void main(String[] args) {
+        String benchName = scalariform.class.getAnnotation(AOTBench.class).value();
+        BenchRunner.run(scalariform::bench, benchName, args);
+    }
+
+    private static void bench(String[] args) {
+        System.out.println(ScalaFormatter$.MODULE$.format(SCALA_SOURCE, FormattingPreferences$.MODULE$, null, 0, ScalaVersions.DEFAULT_VERSION()));
+    }
+
+    private static final String SCALA_SOURCE = "" +
+            "/*                     __                                               *\\\n" +
             "**     ________ ___   / /  ___     Scala API                            **\n" +
             "**    / __/ __// _ | / /  / _ |    (c) 2003-2013, LAMP/EPFL             **\n" +
             "**  __\\ \\/ /__/ __ |/ /__/ __ |    http://scala-lang.org/               **\n" +
@@ -112,13 +121,4 @@ public class scalariform {
             "    sb.result\n" +
             "  }\n" +
             "}";
-
-    public static void main(String[] args) {
-        String benchName = scalariform.class.getAnnotation(AOTBench.class).value();
-        BenchRunner.run(scalariform::bench, benchName, args);
-    }
-
-    public static void bench(String[] args) {
-        System.out.println(ScalaFormatter$.MODULE$.format(scalaSource, new FormattingPreferences(new HashMap<>()), null, 0, ScalaVersions.DEFAULT_VERSION()));
-    }
 }
