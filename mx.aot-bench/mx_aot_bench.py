@@ -21,6 +21,7 @@ _benchmarks = {
     'spectralnorm': [('5000', '10', '500'), ['-H:+MultiThreaded']],
     'pidigits': [('7500', '50', '500'), []],
     'scalariform': [('10000', '10'), []],
+    'chameneosredux': [('10000', '10', '12000'), ['-H:+MultiThreaded']],
 }
 
 
