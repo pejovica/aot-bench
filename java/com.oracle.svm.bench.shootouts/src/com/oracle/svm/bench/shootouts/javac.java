@@ -1,13 +1,14 @@
 package com.oracle.svm.bench.shootouts;
 
+import com.oracle.svm.bench.common.AOTBench;
+import com.oracle.svm.bench.common.BenchRunner;
+
 import java.net.URI;
-import java.util.Arrays;
 import java.util.Collections;
 
 import javax.tools.JavaCompiler;
 import javax.tools.SimpleJavaFileObject;
 import javax.tools.StandardJavaFileManager;
-import javax.tools.ToolProvider;
 
 @AOTBench("javac")
 public class javac {

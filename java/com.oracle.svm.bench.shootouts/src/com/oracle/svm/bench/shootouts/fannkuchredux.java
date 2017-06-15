@@ -7,6 +7,9 @@ package com.oracle.svm.bench.shootouts;
  *
  */
 
+import com.oracle.svm.bench.common.AOTBench;
+import com.oracle.svm.bench.common.BenchRunner;
+
 import java.util.concurrent.atomic.AtomicInteger;
 
 @AOTBench("fannkuchredux")

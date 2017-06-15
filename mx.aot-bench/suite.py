@@ -57,12 +57,18 @@ suite = {
   },
 
   "projects" : {
+    "com.oracle.svm.bench.common" : {
+      "subDir" : "java",
+      "sourceDirs" : ["src"],
+      "javaCompliance" : "1.8",
+    },
     "com.oracle.svm.bench.shootouts" : {
       "subDir" : "java",
       "sourceDirs" : ["src"],
       "javaCompliance" : "1.8",
       "dependencies" : [
-         "JDK_TOOLS",
+        "com.oracle.svm.bench.common",
+        "JDK_TOOLS",
       ]
     },
     "com.oracle.svm.bench.scalariform" : {
@@ -70,7 +76,7 @@ suite = {
       "sourceDirs" : ["src"],
       "javaCompliance" : "1.8",
       "dependencies" : [
-        "com.oracle.svm.bench.shootouts",
+        "com.oracle.svm.bench.common",
         "SCALARIFORM",
       ],
     },

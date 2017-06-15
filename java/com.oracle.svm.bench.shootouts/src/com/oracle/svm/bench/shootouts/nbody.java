@@ -8,6 +8,9 @@ package com.oracle.svm.bench.shootouts;
    modified slightly by Tagir Valeev
  */
 
+import com.oracle.svm.bench.common.AOTBench;
+import com.oracle.svm.bench.common.BenchRunner;
+
 @AOTBench("nbody")
 public final class nbody {
     public static void main(String[] args) {

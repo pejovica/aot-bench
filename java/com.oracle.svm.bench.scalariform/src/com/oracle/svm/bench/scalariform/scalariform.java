@@ -1,7 +1,7 @@
 package com.oracle.svm.bench.scalariform;
 
-import com.oracle.svm.bench.shootouts.AOTBench;
-import com.oracle.svm.bench.shootouts.BenchRunner;
+import com.oracle.svm.bench.common.AOTBench;
+import com.oracle.svm.bench.common.BenchRunner;
 
 import scalariform.ScalaVersions;
 import scalariform.formatter.ScalaFormatter$;

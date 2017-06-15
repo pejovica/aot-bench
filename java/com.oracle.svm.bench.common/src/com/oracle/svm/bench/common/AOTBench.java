@@ -1,4 +1,4 @@
-package com.oracle.svm.bench.shootouts;
+package com.oracle.svm.bench.common;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

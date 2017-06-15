@@ -5,6 +5,9 @@ package com.oracle.svm.bench.shootouts;
    contributed by Isaac Gouy
  */
 
+import com.oracle.svm.bench.common.AOTBench;
+import com.oracle.svm.bench.common.BenchRunner;
+
 import java.math.BigInteger;
 
 @AOTBench("pidigits")

@@ -8,6 +8,9 @@ package com.oracle.svm.bench.shootouts;
  * *reset*
  */
 
+import com.oracle.svm.bench.common.AOTBench;
+import com.oracle.svm.bench.common.BenchRunner;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;

@@ -8,6 +8,9 @@ contributed by Jarkko Miettinen
 Parallel by The Anh Tran
  */
 
+import com.oracle.svm.bench.common.AOTBench;
+import com.oracle.svm.bench.common.BenchRunner;
+
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.concurrent.CyclicBarrier;

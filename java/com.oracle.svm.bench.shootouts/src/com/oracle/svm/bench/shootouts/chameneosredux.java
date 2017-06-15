@@ -6,6 +6,9 @@ package com.oracle.svm.bench.shootouts;
  * modified by Daryl Griffith
  */
 
+import com.oracle.svm.bench.common.AOTBench;
+import com.oracle.svm.bench.common.BenchRunner;
+
 import java.util.concurrent.Exchanger;
 import java.util.concurrent.Phaser;
 import java.util.concurrent.atomic.AtomicInteger;

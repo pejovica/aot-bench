@@ -11,6 +11,9 @@ package com.oracle.svm.bench.shootouts;
  * optimization by John Stalcup 2012-2-19
  */
 
+import com.oracle.svm.bench.common.AOTBench;
+import com.oracle.svm.bench.common.BenchRunner;
+
 import java.io.*;
 import java.util.concurrent.atomic.*;
 
