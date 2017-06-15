@@ -1,4 +1,4 @@
-package com.oracle.svm.bench.shootouts;
+package com.oracle.svm.bench.javac;
 
 import com.oracle.svm.bench.common.AOTBench;
 import com.oracle.svm.bench.common.BenchRunner;

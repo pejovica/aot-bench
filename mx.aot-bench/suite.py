@@ -68,6 +68,14 @@ suite = {
       "javaCompliance" : "1.8",
       "dependencies" : [
         "com.oracle.svm.bench.common",
+      ]
+    },
+    "com.oracle.svm.bench.javac" : {
+      "subDir" : "java",
+      "sourceDirs" : ["src"],
+      "javaCompliance" : "1.8",
+      "dependencies" : [
+        "com.oracle.svm.bench.common",
         "JDK_TOOLS",
       ]
     },
