@@ -19,6 +19,7 @@ _bench_suite = {
     'pidigits': [('7500', '50', '500'), []],
     'scalariform': [('10000', '10'), []],
     'chameneosredux': [('10000', '10', '12000'), ['-H:+MultiThreaded']],
+    'meteor': [('1000', '10'), []],
 }
 
 
